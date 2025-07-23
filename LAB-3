@@ -1,0 +1,28 @@
+create database moon;
+use moon;
+create table employees(EmpID int(10),Name varchar(10),Department varchar(10),Salary int(10));
+insert into employees(EmpID,Name,Department,Salary)
+values
+(101, 'Alice', 'HR', 50000),
+(102, 'Bob', 'Finance', 60000),
+(103, 'Charlie', 'IT', 70000);
+select* from employees;
+select sum(salary) as 1_totalsalaries from employees;
+select count(name) as 2_noofemployees from employees;
+select avg(salary) as 3_avgsalary from employees;
+select max(salary) as 4_maximumsalary,min(salary) minsalary from employees;
+select count(department) as 5_numberofdepartments from employees group by department;
+select avg(salary) as 6_avgsalary from employees group by department;
+select sum(salary) as 7_totalsalarypaidtoeachdepartnment from employees group by department;
+select count(name) as 8_noofemployeesineachdeprtment from employees group by department;
+select max(salary) as 9_maxsalaryfromeachdepartment from employees group by department;
+select avg(salary)>50000 from employees group by department;
+select salary>10000000 from employees;
+alter table employees add joiningdate date;
+update employees set joiningdate=2021-12-01 where name='Alice';
+select department from employees where Salary=Salary(min);
+
+
+
+
+
