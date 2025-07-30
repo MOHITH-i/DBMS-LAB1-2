@@ -1,0 +1,22 @@
+create database mohith;
+use mohith;
+create table employees(empid int(20),name varchar(20),department varchar(20),salary int(20),city varchar(20));
+insert into employees(empid,name,department,salary,city)values
+(101,"amit kumar","HR",45000,"Delhi"),
+(102,"priya singh","IT",60000,"Mumbai"),
+(103, 'Rahul Mehta', 'Sales', 50000, 'Delhi'),
+(104, 'Sneha Verma', 'IT', 70000, 'Bangalore'),
+(105, 'Arjun Rao', 'Finance', 40000, 'Chennai'),
+(106, 'Neha Sharma', 'HR', 48000, 'Delhi'),
+(107, 'Ravi Patel', 'Sales', 52000, 'Hyderabad'),
+(108, 'Pooja Jain', 'IT', 75000, 'Mumbai');
+select * from employees ;
+select name as people_in_delhi from employees  where city="delhi";
+select name as people_work_at_it_hr from employees  where department in("HR","IT");
+select name as mumbai_50000 from employees  where salary>50000 and city="Mumbai";
+select name as from_citys from employees   where city in("Banglore","Delhi","Mumbai");
+select name as name_starts_with_p from employees where name like "p%";
+select name as ends_with_a from employees where name like "%a";
+select name as contains_ha from employees where name like "%ha%";
+select name as not_in_sales_department from employees where department!="Sales";
+select name as i_and_morethen_4500 from employees where department="IT" and Salary>65000;
